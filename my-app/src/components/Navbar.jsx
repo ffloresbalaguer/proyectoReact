@@ -1,8 +1,8 @@
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="">
+const Navbar = () => {
+    return (
+        <div className="">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Manchas Store</a>
@@ -43,8 +43,8 @@ function App() {
     </div>
   </div>
 </nav>
-    </div>
-  );
+    </div>      
+    ); 
 }
 
-export default App;
+export default Navbar;
