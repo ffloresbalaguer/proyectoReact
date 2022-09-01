@@ -1,5 +1,6 @@
 import React from 'react'
 import Counter from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
 
 
 const ItemListContainer = ({greeting}) => {
@@ -13,7 +14,10 @@ const ItemListContainer = ({greeting}) => {
         <div>
             <h1>{greeting}</h1>
             <div>
-                <Counter stock={7} onAdd={onAdd}/>                  
+                <Counter stock={7} onAdd={onAdd}/>                 
+            </div>
+            <div>
+                <ItemList/>
             </div>
         </div>
         
