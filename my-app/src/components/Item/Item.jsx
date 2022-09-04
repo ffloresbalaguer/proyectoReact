@@ -1,10 +1,6 @@
 import {React, useState, useEffect} from 'react';
+import productos from '../Data/Data';
 
-const productos = [
-    {nombre:"Arañazo", precio:20, stock:2},
-    {nombre:"Mordisco", precio:60, stock:1},
-    {nombre:"Bunnykick", precio:80, stock:2}
-]
 
 function consultarPromesa(confirmacion) {
     return new Promise ((res,rej) => {
@@ -56,5 +52,3 @@ const Item = () => {
 
 
 export default Item;
-
-

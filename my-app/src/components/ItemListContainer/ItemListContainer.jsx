@@ -1,5 +1,6 @@
 import React from 'react'
 import Counter from '../ItemCount/ItemCount'
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer'
 import ItemList from '../ItemList/ItemList'
 
 
@@ -18,6 +19,9 @@ const ItemListContainer = ({greeting}) => {
             </div>
             <div>
                 <ItemList/>
+            </div>
+            <div>
+                <ItemDetailContainer/>
             </div>
         </div>
         
