@@ -1,4 +1,4 @@
-import aranazo1 from "../Data/CatClaws1250.png";
+/*import aranazo1 from "../Data/CatClaws1250.png";
 import mordisco1 from "../Data/CatBite1250.jpg";
 import bunny1 from "../Data/BunnyKick1250.jpg";
 
@@ -8,4 +8,4 @@ const productos = [
     {nombre:"Bunnykick", precio:80, stock:2, image: bunny1, descripcion: "Un ataque combo muy poderoso pero con largo tiempo de recarga"}
 ]
 
-export default productos;
+export default productos;*/
