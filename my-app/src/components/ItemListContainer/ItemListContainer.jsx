@@ -4,9 +4,9 @@ import ItemList from '../ItemList/ItemList'
 
 
 const arrayProductos = [
-    {nombre:"Arañazo", precio:20, stock:2},
-    {nombre:"Mordisco", precio:60, stock:1},
-    {nombre:"Bunnykick", precio:80, stock:2}
+    {id:1, nombre:"Arañazo", precio:20, stock:2},
+    {id:2, nombre:"Mordisco", precio:60, stock:1},
+    {id:3, nombre:"Bunnykick", precio:80, stock:2}
 ]
 
 function consultarPromesa(confirmacion) {
