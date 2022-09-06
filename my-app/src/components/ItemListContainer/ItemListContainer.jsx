@@ -1,13 +1,10 @@
 import {React, useState, useEffect} from 'react'
 import Counter from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
+import arrayProductos from '../Data/Data';
 
 
-const arrayProductos = [
-    {id:1, nombre:"Arañazo", precio:20, stock:2},
-    {id:2, nombre:"Mordisco", precio:60, stock:1},
-    {id:3, nombre:"Bunnykick", precio:80, stock:2}
-]
+
 
 function consultarPromesa(confirmacion) {
     return new Promise ((res,rej) => {
