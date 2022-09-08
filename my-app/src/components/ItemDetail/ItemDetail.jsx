@@ -4,8 +4,8 @@ import React from 'react';
 const ItemDetail = ({detail}) => {
     return (
         <div>
-            {detail.map((producto) =>
-            <div key={producto.id}>
+            {detail.map((producto,indice) =>
+            <div key={indice}>
                 <div className="card mb-3">
                     <h3 className="card-header">{producto.nombre}</h3>
                     <div className="card-body">

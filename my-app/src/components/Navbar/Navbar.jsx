@@ -1,31 +1,26 @@
 import React from 'react';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
 import CartWidget from '../CartWidget/CartWidget';
+import {Link} from 'react-router-dom';
 
 const Navbar = () => {
     return (
       <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Manchas Store</a>
+          <button className='nav-item btn btn-dark'><Link className='nav-link' to='/'>Manchas Store</Link></button>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarColor02">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="#">Inicio
-                  <span className="visually-hidden">(current)</span>
-                </a>
+                <a className="nav-link" href="/">Carrito</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Carrito</a>
+                <button className='nav-item btn btn-dark'><Link className='nav-link' to='/category/:categoryid'>Nuestras Marcas</Link></button>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Nuestras Marcas</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Contacto</a>
+                <a className="nav-link" href="/">Contacto</a>
               </li>              
             </ul>
           </div>
@@ -38,4 +33,5 @@ const Navbar = () => {
     ); 
 }
 
+/*<a className="navbar-brand" href="#">Manchas Store</a>*/ 
 export default Navbar;
