@@ -1,6 +1,7 @@
 import {React, useState, useEffect} from 'react';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import arrayProductos from '../Data/Data';
+import {useParams} from 'react-router-dom';
 
 function consultarPromesa(confirmacion) {
     return new Promise ((res,rej) => {
@@ -18,14 +19,19 @@ function consultarPromesa(confirmacion) {
 
 const ItemDetailContainer = () => {
 
-    const [productos, setProductos] = useState([]);    
+    const [productoCard, setProductoCard] = useState([]); 
+    const {id} = useParams()   
 
     useEffect(() => {
         consultarPromesa(true)
-    .then(producto=> {
+    .then(data=> {
+        const productoI = data.find (productoI => productoI.id == id)        
 
-        setProductos(producto)
+        setProductoCard(productoI)
     })
+
+
+
     .catch(error => {
         console.error(error)        
     })
@@ -35,7 +41,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div>
-            <ItemDetail detail={productos}/>
+            <ItemDetail detail={productoCard}/>
         </div>
     );
 }

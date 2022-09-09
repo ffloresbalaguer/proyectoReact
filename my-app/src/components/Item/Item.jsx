@@ -13,7 +13,7 @@ const Item = ({producto,indice}) => {
                 <div className="card-body">
                 <p className="card-text">Precio: ${producto.precio}</p>
                 <p className="card-text">Stock :{producto.stock}</p>
-                <button className="btn btn-dark"><Link className='nav-link' to={"/item/:id" + producto.id}>Ver Detalle</Link></button>                
+                <button className="btn btn-dark"><Link className='nav-link' to={'/item/:id' + producto.id}>Ver Detalle</Link></button>                
          </div>
     </div>
   )
