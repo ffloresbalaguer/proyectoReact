@@ -17,10 +17,10 @@ const Navbar = () => {
                 <a className="nav-link" href="/">Carrito</a>
               </li>
               <li className="nav-item">
-                <button className='nav-item btn btn-dark'><Link className='nav-link' to='/category/:categoryid'>Power Attacks</Link></button>
+                <button className='nav-item btn btn-dark'><Link className='nav-link' to='/category/Power'>Power Attacks</Link></button>
               </li>
               <li className="nav-item">
-              <button className='nav-item btn btn-dark'><Link className='nav-link' to='/category/:categoryid'>Standard Attacks</Link></button>
+              <button className='nav-item btn btn-dark'><Link className='nav-link' to='/category/Standard'>Standard Attacks</Link></button>
               </li>              
             </ul>
           </div>

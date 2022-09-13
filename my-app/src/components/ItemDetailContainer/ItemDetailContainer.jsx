@@ -47,9 +47,11 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="row">
-            <ItemDetail nombre = {producto.nombre} image={producto.image} descripcion={producto.descripcion} precio={producto.precio} stock={producto.stock}/>
+            <ItemDetail detail = {producto}/>
         </div>
     );
 }
 
 export default ItemDetailContainer;
+
+/*<ItemDetail nombre = {producto.nombre} image={producto.image} descripcion={producto.descripcion} precio={producto.precio} stock={producto.stock}/>*/

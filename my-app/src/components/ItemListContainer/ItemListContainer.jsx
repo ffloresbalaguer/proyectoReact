@@ -1,4 +1,5 @@
 import {React, useState, useEffect} from 'react'
+import {useParams} from 'react-router-dom'
 import Counter from '../ItemCount/ItemCount'
 import ItemList from '../ItemList/ItemList'
 import arrayProductos from '../Data/Data';
@@ -6,31 +7,47 @@ import arrayProductos from '../Data/Data';
 
 
 
-function consultarPromesa(confirmacion) {
+/*function consultarPromesa(confirmacion) {
     return new Promise ((res,rej) => {
-        if (confirmacion) {
+        if (categoria) {
+            res(arrayProductos.filter(item => item.category === category))
+        } else if(confirmacion){
             res(arrayProductos)
-        } else {
+        }
+        else {
             rej("Accesso denegado")
         }
     }) 
-}
+}*/
 
 
 const ItemListContainer = ({greeting}) => {
 
-    const [productos, setProductos] = useState([]);    
+    const [productos, setProductos] = useState([]);
 
+    const {categoria} = useParams()
+
+    const getProducts = () => new Promise ((resolve, reject) => {
+        if (categoria) {
+            resolve(arrayProductos.filter(item => item.category == categoria))
+        } else {
+            resolve(arrayProductos)
+        }
+    }) 
+    console.log(categoria)
+
+
+    
     useEffect(() => {
-        consultarPromesa(true)
-    .then(producto=> {
+        getProducts()
+    .then(productos=> 
 
-        setProductos(producto)
-    })
-    .catch(error => {
+        setProductos(productos)
+    )
+    .catch(error => 
         console.error(error)        
-    })
-    }, []);
+    )
+    }, [categoria]);
     
     
     
