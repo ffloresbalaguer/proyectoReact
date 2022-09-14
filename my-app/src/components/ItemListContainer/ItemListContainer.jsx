@@ -25,16 +25,18 @@ const ItemListContainer = ({greeting}) => {
 
     const [productos, setProductos] = useState([]);
 
-    const {categoria} = useParams()
+    const {id} = useParams()
+
+    
 
     const getProducts = () => new Promise ((resolve, reject) => {
-        if (categoria) {
-            resolve(arrayProductos.filter(item => item.category == categoria))
+        if (id) {
+            resolve(arrayProductos.filter(item => item.category === id))
         } else {
             resolve(arrayProductos)
         }
     }) 
-    console.log(categoria)
+   
 
 
     
@@ -47,7 +49,7 @@ const ItemListContainer = ({greeting}) => {
     .catch(error => 
         console.error(error)        
     )
-    }, [categoria]);
+    }, [id]);
     
     
     
