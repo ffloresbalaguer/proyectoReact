@@ -4,6 +4,7 @@ import Navbar from "./Navbar/Navbar";
 import ItemListContainer from './ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import Cart from './Cart/Cart';
+import CartContext from './Context/CartContext';
 
 
 
@@ -12,6 +13,7 @@ function App() {
     
     
     <div className="row">
+      <CartContext>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -21,6 +23,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}></Route>
         </Routes>      
       </BrowserRouter>
+      </CartContext>
     </div>  
 
     

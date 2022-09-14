@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+
+import { MiContexto } from '../Context/CartContext';
 
 
 
@@ -8,6 +10,8 @@ import {Link} from 'react-router-dom';
 
 
 const ItemDetail = ({detail}) => {
+    const {addItem}=useContext(MiContexto);
+    const {cart}=useContext(MiContexto);
     
     const [cantidad, setCantidad] = useState(1);
     
@@ -28,6 +32,9 @@ const ItemDetail = ({detail}) => {
         }
 
     }
+
+
+    console.log(cart)
 
 
 
@@ -59,7 +66,7 @@ const ItemDetail = ({detail}) => {
                     <p>
                         {cantidad}
                     </p>
-                    <button className= 'btn btn-dark' onClick={() => agregarAlCarrito(detail, cantidad)}>Comprar</button>
+                    <button className= 'btn btn-dark' onClick={() => addItem(detail, cantidad)}>Comprar</button>
                     <button className='btn btn-light'><Link className='link' to='/cart'>Terminar Compra</Link></button>
                 </div>
             </>  
