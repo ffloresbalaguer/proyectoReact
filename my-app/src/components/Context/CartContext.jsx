@@ -39,8 +39,16 @@ const CartContext = ({children}) => {
         setCart(filter);
     };
 
+    const precioTotal = () => {
+        let total = 0;
+        cart.forEach((element)=>{
+            total = total + (element.cantidad * element.precio)            
+        })
+        return total;        
+    }
 
-    return <MiContexto.Provider value={{deleteItem, addItem, vaciarCarrito, cart}}>{children}</MiContexto.Provider>;
+
+    return <MiContexto.Provider value={{deleteItem, addItem, vaciarCarrito, precioTotal, cart}}>{children}</MiContexto.Provider>;
     
 }
 

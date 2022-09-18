@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import CartWidget from '../CartWidget/CartWidget';
 import {Link} from 'react-router-dom';
+import { MiContexto } from '../Context/CartContext';
 
 const Navbar = () => {
+  const {cart}=useContext(MiContexto);
     return (
       <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -26,8 +28,13 @@ const Navbar = () => {
           </div>
         </div>
         <div className = 'h3'>
-                <Link to="/cart"><CartWidget /></Link>
-              </div> 
+          {cart.length > 0 ?
+          <Link to="/cart"><CartWidget /></Link>
+          :
+          ""
+          }
+          
+        </div> 
       </nav>
     </div>      
     ); 
