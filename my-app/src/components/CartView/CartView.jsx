@@ -5,7 +5,7 @@ import { MiContexto } from '../Context/CartContext';
 
 
 
-const Cart = () => {
+const CartView = () => {
     const {cart, deleteItem, vaciarCarrito}=useContext(MiContexto);
 
     console.log(cart)
@@ -29,4 +29,4 @@ const Cart = () => {
     );
 }
 
-export default Cart;
+export default CartView;

@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
+import './ItemDetail.css'
 
 import { MiContexto } from '../Context/CartContext';
 
@@ -39,13 +40,12 @@ const ItemDetail = ({detail}) => {
 
 
     return (
-        
-            <>
-                <div className="card mb-3">
+
+            <div className="card mb-3">
                     <h3 className="card-header">{detail.nombre}</h3>
                     <div className="card-body">
                 </div>
-                <img src={detail.image} />
+                <img src={detail.image} className="detailImg" />
                 <div className="card-body">
                     <p className="card-text">Descripción: {detail.descripcion}</p>
                 </div>
@@ -63,14 +63,16 @@ const ItemDetail = ({detail}) => {
                     <button className='btn btn-secondary' onClick= {() => cantidadProducto("-")}>
                         -
                     </button>
-                    <p>
-                        {cantidad}
-                    </p>
+                    <div className="d-flex justify-content-center">
+                        <p>
+                            {cantidad}
+                        </p> 
+                    </div>
+                    
                     <button className= 'btn btn-dark' onClick={() => addItem(detail, cantidad)}>Comprar</button>
-                    <button className='btn btn-light'><Link className='link' to='/cart'>Terminar Compra</Link></button>
-                </div>
-            </>  
-            
+                    <button className='btn btn-dark'><Link className='nav-link' to='/cart'>Terminar Compra</Link></button>
+            </div>
+        
     );
 }
 
