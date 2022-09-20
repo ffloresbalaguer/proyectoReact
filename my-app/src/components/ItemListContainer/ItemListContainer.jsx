@@ -1,6 +1,6 @@
 import {React, useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import Counter from '../ItemCount/ItemCount'
+/*import Counter from '../ItemCount/ItemCount'*/
 import ItemList from '../ItemList/ItemList'
 import arrayProductos from '../Data/Data';
 
@@ -55,19 +55,16 @@ const ItemListContainer = ({greeting}) => {
     
     
    
-    function onAdd (count){
+    /*function onAdd (count){
         alert(`Te estas llevando ${count} Manchas`)
 
-    }
+    }*/
 
 
     return (
         <div>
-            <h1>{greeting}</h1>
-            <div>
-                <Counter stock={7} onAdd={onAdd}/>                 
-            </div>
-            <div>
+            <h1 className='d-flex justify-content-center'>{greeting}</h1>
+            <div className="container d-flex justify-content-center">
                 <ItemList list= {productos}/>
             </div>
         </div>
