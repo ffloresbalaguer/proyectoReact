@@ -2,8 +2,10 @@ import {React, useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom'
 /*import Counter from '../ItemCount/ItemCount'*/
 import ItemList from '../ItemList/ItemList'
-import arrayProductos from '../Data/Data';
-
+/*import arrayProductos from '../Data/Data';*/
+import db from '../../services/firebase';
+import { getDocs, collection, query, where } from "firebase/firestore";
+/*import { async } from '@firebase/util';*/
 
 
 
@@ -28,19 +30,46 @@ const ItemListContainer = ({greeting}) => {
     const {id} = useParams()
 
     
+    const getData = async(idCategory) =>{
+        
+        try {
+            
+        const document = idCategory ? query(collection(db, "Items"), where("category", "==", idCategory))
+                            : collection(db, "Items")
+        const col = await getDocs(document)
+        console.log("col.docs", col.docs)
+        const result = col.docs.map((doc) => doc = {id:doc.id,...doc.data()})
+        setProductos(result)
+            
+        
+    } catch (error) {
+        console.log(error)
+            
+        }
+    }
 
-    const getProducts = () => new Promise ((resolve, reject) => {
+    useEffect(() => {
+        getData(id)
+
+    }, [id]);
+
+
+
+
+    
+
+    /*const getProducts = () => new Promise ((resolve, reject) => {
         if (id) {
             resolve(arrayProductos.filter(item => item.category === id))
         } else {
             resolve(arrayProductos)
         }
-    }) 
+    }) */
    
 
 
     
-    useEffect(() => {
+   /* useEffect(() => {
         getProducts()
     .then(productos=> 
 
@@ -49,7 +78,7 @@ const ItemListContainer = ({greeting}) => {
     .catch(error => 
         console.error(error)        
     )
-    }, [id]);
+    }, [id]);*/
     
     
     
@@ -64,7 +93,7 @@ const ItemListContainer = ({greeting}) => {
     return (
         <div>
             <h1 className='d-flex justify-content-center'>{greeting}</h1>
-            <div className="container d-flex justify-content-center">
+            <div className="container">
                 <ItemList list= {productos}/>
             </div>
         </div>
