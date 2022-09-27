@@ -64,7 +64,7 @@ const ItemDetailContainer = () => {
 
 
     return (
-        <div className= 'row'>
+        <div className= 'd-flex justify-content-center'>
             <ItemDetail detail = {producto}/>
         </div>
     );
